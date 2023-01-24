@@ -4,19 +4,6 @@
 
 The primary business objective is to determine whether a person is likely to subscribe to a term deposit when presented with marketing offers.
 
-#### Data Mining Goals
-
-Given the dataset of 426K vehicle purchases which includes the features (id, region, year, manufacturer, model, condition, cylinders,
-fuel, odometer, title_status, transmission, VIN, drive, size, type, paint_color, state) along with the target selling price, determine which features are most important in determining the price paid for a used vehicle. The desired output is a list of the most important features in rank order.  
-
-#### Project Plan
-
-1) Aquire and explore the dataset for understanding
-2) Prepare the data including cleaning and preprocessing
-3) Try various modeling techniques in order to find the best model fit for the data and feature importance
-4) Evaluate model outputs and repeat steps 3 & 4 as needed
-5) Document analysis findings
-
 ### Data Understanding
 
 #### Collect Initial Data
@@ -73,9 +60,6 @@ New training dataset includes: ['age','job','marital','education','default','hou
 - the extra hyperparameters has led to a small improvement over the baselince and basic models
 - the DecisionTree classifier was the most effective for the parameters tried since it had a relatively short training time and high accuracy compared
 to the other models with the added bonus that it is easier to explain
-
-### Evaluation
-#### Summary of Results
 
 ##### Possible Next Steps
 1. Balance the dataset either by collecting more samples where the person signed up for an account or generate synthetic data using values from rows where the person signed up.
