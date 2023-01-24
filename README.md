@@ -54,45 +54,32 @@ Categorical Columns: ['job', 'marital', 'education', 'default', 'housing', 'loan
 Some potential ways to address this would be to a) gather more examples of subscription acceptance b) generate synthetic data with acceptance or c) reduce the number of non exceptance
 
 ##### Trained models using Hyperparamter Tuning, GridSearch, and Crossfold Validation with the following results:
-<img src="grid_results.png" width="500" height="300"/>
+<img src="grid_results.png" width="600" height="400"/>
 
 ##### Observations for the improved models
 - the relationship between the training times is similar to the basic models 
 - They extra hyperparameters has led to a small improve over the baselince and basic models
 - More data columns and balancing the data would likely lead to higher accuracy
+- The SVM model training ran very long which prevented me from trying additional hyperparameter options
 
 ##### Attempt to improve model accuracy by supplying addition marketing details info to the training dataset (
 New training dataset includes: ['age','job','marital','education','default','housing','loan','contact','duration','campaign','pdays']
 
 ##### Trained models on the additional data using using Hyperparamter Tuning, GridSearch, and Crossfold Validation similar to above with the following results:
-TODO
-1. Add Chart
+<img src="extra_data_results.png" width="600" height="400"/>
 
+##### Observations for the models with additional data
+- the relationship between the training times is similar to the basic models 
+- the extra hyperparameters has led to a small improvement over the baselince and basic models
+- the DecisionTree classifier was the most effective for the parameters tried since it had a relatively short training time and high accuracy compared
+to the other models with the added bonus that it is easier to explain
 
-
-
-TODO after this
-
-##
 ### Evaluation
 #### Summary of Results
-1. Multiple Linear Regression, Ridge, and Lasso were trained on a subset of the initial data and regardless of the model type the rank of feature importance was
-    1. year
-    2. model
-    3. odometer
-    4. type
-    5. drive
-    6. cylinders
-    7. manufacuturer
-    8. condition
-    10. paint color.
-2. This lines up with general expectations on what buyers typically prioritize when purchasing a vehicle
 
 ##### Possible Next Steps
-1. There was considerable missing data in the dataset so it could be useful to impute the missing values vs. just deleting the rows that were missing any data
-2. State was not factored into the modeling since there was a very uneven distribution of data. One potential way to address this would be to bucket the state values into 
-US subregions such as North East, Mid-West, etc. to understand how price varies by selling location.
-3. Explore other feature importance methods such as permutation_importance
-4. As usual, having more data, especially data that helps have more records from the less common models, types, etc. would likely be usefull in getting more accurate predictions.
+1. Balance the dataset either by collecting more samples where the person signed up for an account or generate synthetic data using values from rows where the person signed up.
+2. Additional fields from the original dataset could be added such as economic indicators or temporal details regarding the when the offers were made.
+3. Do additional data analysis to determine if some fields or values shoudl be ommited due anomolies or outliers
 
-#### The Jupyter Notebook used to analyze the data can be found at [prompt_II.ipynb](./prompt_II.ipynb)
+#### The Jupyter Notebook used to analyze the data can be found at [prompt_III.ipynb](./prompt_III.ipynb)
